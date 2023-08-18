@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#todos {
+  width: 100%;
+  min-height: calc(100vh - 150px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 36px;
+  flex-direction: row;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.todo {
+  flex-direction: row;
+  position: relative;
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.todo > :first-child,
+.todo > :last-child {
+  flex: 0 0 auto;
+}
+
+.todo > :nth-child(2) {
+  flex: 1 1 auto;
+}
+
+.todoTextArea {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 25px;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  resize: none;
+  width: 400px;
+  height: 50px;
+  border: 2px solid black;
+  text-decoration: none;
+  outline: none;
+  white-space: pre-wrap;
+  margin-bottom: 36px;
+}
+
+.checkButton, .cancelButton  {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (min-width: 1500px) {
+  #app-title h1 {
+    font-size: 40px;
+  }
+  .todoTextArea {
+    width: 600px;
+    height: 50px;
+  }
+  .todo {
+    width: 600px;
+    font-size: 20px;
+  }
+
+  .checkButton, .cancelButton  {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.menu .menu-lines {
+  position: absolute;
+  z-index: 999;
+  width: 35px;
+  height: 35px;
+}
+.menu .menu-lines span { 
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all ease .2s;
+}
+.menu .menu-faketrigger {
+  position: absolute;
+  z-index: 1000;
+  width: 35px;
+  height: 35px;
+  opacity: 0;
+  cursor: pointer;
+  
+}
+
+.menu .menu-faketrigger:checked ~ .menu-lines span{
+  /* background-color: #232323; */
+}
+
+.menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(1) {
+  transform-origin: 0% 0%;
+  transform: rotate(45deg) scaleX(1.25);  
+}
+.menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(2) {
+  opacity: 0;
+}
+.menu .menu-faketrigger:checked ~ .menu-lines span:nth-child(3) {
+  transform-origin: 0% 100%;
+  transform: rotate(-45deg) scaleX(1.25); 
+}
+
+.menu {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.menu ul {
+  position: absolute;
+  z-index: 998;
+  left: 0;
+  top: 0;
+  margin: 0;
+  width: 300px;
+  height: calc(100vh);
+  background-color: white;
+  padding-top: 100px;
+  border-right: solid 2px black;
+  border-bottom: solid 2px black;
+  margin-left: -300px;
+  transition: all ease .2s;
+}
+
+.menu .menu-faketrigger:checked ~ ul {
+  margin-left: 0;
+}
+
+.menu ul li {
+  padding: 10px 30px;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  transition: all ease .3s;
+}
+
+.menu ul li a:hover {
+  color: #999;
+}
+
+@keyframes strike {
+  from {
+    text-decoration-color: transparent;
+  }
+  to {
+    text-decoration-color: auto;
+  }
+}
+.strike {
+  text-decoration: line-through;
+  animation: strike 0.15s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+textarea:hover {
+    transform: scale(1.03);
+}
