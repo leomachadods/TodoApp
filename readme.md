@@ -1,6 +1,6 @@
 ## Projetasso Todo App
 
-![PREVIEW]("print.png")
+![PREVIEW](print.png)
 
 Olá a todos seres humanos deste planeta!
 
