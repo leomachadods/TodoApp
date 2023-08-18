@@ -10,4 +10,6 @@ Pretendo dar uma atualizadinha para melhorar essa bugiganga
 
 Espero que os recrutadores mais lindo desse planeta gostem!
 
-[Visualizar na vercel]("https://todo-app-gray-sigma-43.vercel.app/")
+## LINK
+
+[Visualizar na vercel](https://todo-app-gray-sigma-43.vercel.app/)
